@@ -51,5 +51,14 @@
     <None Include="..\Debug\Shader\default.vs">
       <Filter>GLSL Shader</Filter>
     </None>
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp.exe">
+      <Filter>資源檔</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp.dll">
+      <Filter>資源檔</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp_viewer.exe">
+      <Filter>資源檔</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -38,18 +38,20 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\OpenGL\Simple OpenGL Image Library\src;D:\OpenGL\glfw-3.1.1\include;D:\OpenGL\glew-1.12.0\include;D:\OpenGL\assimp-3.1.1-win-binaries\include;D:\OpenGL\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\OpenGL\Simple OpenGL Image Library\src;D:\OpenGL\glfw-3.1.1\include;D:\OpenGL\glew-1.12.0\include;D:\OpenGL\assimp-3.1.1\include;D:\OpenGL\glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\OpenGL\assimp-3.1.1-win-binaries\lib32;D:\OpenGL\Simple OpenGL Image Library\lib;D:\OpenGL\glfw-3.1.1\lib;D:\OpenGL\glew-1.12.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp.lib;libSOIL.a;glfw3.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\OpenGL\assimp-3.1.1\build\code\Debug;D:\OpenGL\Simple OpenGL Image Library\lib;D:\OpenGL\glfw-3.1.1\lib;D:\OpenGL\glew-1.12.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SOIL.lib;assimpd.lib;glfw3.lib;glew32s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,6 +82,9 @@
     <ResourceCompile Include="LearnOpenGL.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp.dll" />
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp.exe" />
+    <None Include="..\..\..\..\..\..\..\OpenGL\assimp-3.1.1-win-binaries\bin32\assimp_viewer.exe" />
     <None Include="..\Debug\Shader\default.frag" />
     <None Include="..\Debug\Shader\default.vs" />
   </ItemGroup>

@@ -71,10 +71,10 @@ int main()
 	glEnable(GL_DEPTH_TEST);
 
 	// Setup and compile our shaders
-	Shader shader("Shader/model_loading.vs", "Shader/model_loading.frag");
+	Shader shader("Dependency/Shader/model_loading.vs", "Dependency/Shader/model_loading.frag");
 
 	// Load models
-	Model ourModel("Models/katana.obj");
+	Model ourModel("Dependency/Models/katana/katana.obj");
 
 	// Draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -105,7 +105,7 @@ int main()
 		// Draw the loaded model
 		glm::mat4 model;
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // Translate it down a bit so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// It's a bit too big for our scene, so scale it down
+		model = glm::scale(model, glm::vec3(10*(0.2f, 0.2f, 0.2f)));	// It's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		ourModel.Draw(shader);
 
